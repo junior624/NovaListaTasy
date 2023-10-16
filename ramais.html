@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <link rel="stylesheet" href="CSS/style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+</head>
+
+<body>
+
+  <!--Cabeçãlho e menu de navegação-->
+  <div class="menu-content">
+    <h1 class="logo"> Utilidades</h1>
+    <nav class="header-menu">
+      <ul class="list-itens">
+        <li><a href="index.html">CÓDIGOS</a></li>
+        <li><a href="ramais.html">RAMAIS</a></li>
+        <li><a href="docs.html">DOCUMENTAÇÃO</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!--barra de busca-->>
+  <input type="text" id="myInput" onkeyup="myFunction()" placeholder="busque aqui..." title="Ecreva parte do nome aqui">
+
+  <!--Itens da lista-->
+  <div>
+    <table id="myTable">
+      <tr class="header">
+        <th style>NOME</th>
+        <th style>RAMAL</th>
+      </tr>
+
+
+      <tr>
+        <td>Climatização - Plantão </td>
+        <td data-type="cod">999778973
+        </td>
+      </tr>
+      <tr>
+
+      <tr>
+        <td>HDVS - Sala de recuperação - Posto de enfermagem </td>
+        <td data-type="cod">7083 ou 7214
+        </td>
+      </tr>
+      <tr>  
+
+        <tr>
+          <td>HDVS - Solange </td>
+          <td data-type="cod">8189
+          </td>
+        </tr>
+        <tr>
+
+      <tr>
+        <td>HSF ECG - Claudia </td>
+        <td data-type="cod">8108
+        </td>
+      </tr>
+      <tr>
+      <tr>
+        <td>HSC CO Ecografia (sala do ecógrafo) - Técnica Letícia </td>
+        <td data-type="cod">6851
+        </td>
+      </tr>
+      <tr>
+      <tr>
+        <td>Almoxarifado </td>
+        <td data-type="cod">8534
+        </td>
+      </tr>
+
+      <tr>
+        <td>TI Expedição - Eduardo </td>
+        <td data-type="cod">6004
+        </td>
+      </tr>
+      <tr>
+
+
+      <tr>
+        <td>HDVS - Melissa </td>
+        <td data-type="cod">7640
+        </td>
+      </tr>
+      <tr>
+
+      <tr>
+        <td>HCSA CDI- Kelley </td>
+        <td data-type="cod">8755
+        </td>
+      </tr>
+      <tr>
+
+      <tr>
+        <td>Engenharia Clínica - Gerson </td>
+        <td data-type="cod">6232
+        </td>
+      </tr>
+      <tr>
+        <tr>
+          <td>HSF Recepção checkup - ECG | Lyliian</td>
+          <td data-type="cod">7978
+          </td>
+        </tr>
+        <tr>
+      <tr>
+        <td>HSF Arritimias - Mapa | Holter | Leila | Hibanes</td>
+        <td data-type="cod">7544
+        </td>
+      </tr>
+      <tr>
+
+      <tr>
+          <td>HSR Medicina nuclear - Físicos | Stefânia</td>
+          <td data-type="cod">6603
+          </td>
+        </tr>
+        <tr>
+        <!--  <td>teste</td>
+            <td data-type="cod">12345
+            </td>
+          </tr>
+          <tr>-->
+
+  </div>
+
+
+
+
+  <!--script com função de busca-->
+  <script>
+    function myFunction() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("myInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("myTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+    document.querySelectorAll('button[data-type="copy"]')
+      .forEach(function (button) {
+        button.addEventListener('click', function () {
+          let cod = this.parentNode.parentNode
+            .querySelector('td[data-type="cod"]')
+            .innerText;
+
+          let tmp = document.createElement('textarea');
+          tmp.value = cod;
+          tmp.setAttribute('readonly', '');
+          tmp.style.position = 'absolute';
+          tmp.style.left = '-9999px';
+          document.body.appendChild(tmp);
+          tmp.select();
+          document.execCommand('copy');
+          document.body.removeChild(tmp);
+          console.log(`${cod} copied.`);
+        });
+      });
+
+
+  </script>
+
+</body>
+
+</html>
