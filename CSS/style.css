@@ -165,3 +165,53 @@ button:active {
 }
 
 
+/* Estilos para centralizar o formulário */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Isso garante que o contêiner ocupe toda a altura da viewport */
+  text-align: center;
+}
+
+/* Estilos para o formulário (opcional) */
+.form-container form {
+  max-width: 400px; /* Define a largura máxima do formulário para evitar que ele fique muito largo */
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Alinha o texto à esquerda dentro do formulário */
+}
+
+.form-container form label {
+  display: block;
+  margin-bottom: 15px;
+  text-align: left; /* Alinha o texto à esquerda dentro das labels */
+  color: white; /* Define a cor do texto como branca */
+}
+
+.form-container form input,
+.form-container form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container form button {
+  background-color: #4caf50;
+  color: black; /* Cor da fonte do botão é preta */
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.form-container form button:hover {
+  background-color: #45a049;
+}
