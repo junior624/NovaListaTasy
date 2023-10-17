@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
@@ -12,12 +14,21 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.menu-container {
+  width: 100%;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
 .menu-content {
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 1rem;
+  padding: 0 20px;
 }
 
 .logo {
@@ -25,14 +36,21 @@ body {
   letter-spacing: 0.2rem;
   cursor: pointer;
   color: #F48024;
+  text-decoration: none;
 }
 
 .menu-content .list-itens {
+  list-style: none;
+  padding: 0;
   display: flex;
-  gap: 10px;
+  align-items: center;
 }
 
-.menu-content .list-itens a {
+.menu-content .list-itens li {
+  margin: 0 20px;
+}
+
+.menu-content .list-itens li a {
   text-decoration: none;
   color: white;
   font-family: 'Lato', sans-serif;
@@ -143,25 +161,30 @@ button:active {
   font-size: 24px;
   color: white;
   text-decoration: none;
+  align-items: center;
 }
 
 .header-menu {
   display: flex;
+  align-items: center;
 }
 
 .list-itens {
   list-style: none;
   padding: 0;
   display: flex;
+  align-items: center;
 }
 
 .list-itens li {
   margin: 0 20px;
+  align-items: center;
 }
 
 .list-itens li a {
   text-decoration: none;
   color: white;
+  align-items: center;
 }
 
 
@@ -170,7 +193,7 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Isso garante que o contêiner ocupe toda a altura da viewport */
+  height: 50vh; /* Isso garante que o contêiner ocupe toda a altura da viewport */
   text-align: center;
 }
 
